@@ -8,6 +8,12 @@ const port = process.env.PORT;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Working :)",
+  });
+});
+
 app.post("/signup", async (req, res) => {
   const { Username, Email, Password, DateofBirth } = req.body;
 
